@@ -12,6 +12,8 @@ const partialViewPath = path.resolve('templates/partials')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //Setup handlebars engine and view locations
 app.set('view engine', 'hbs')  //handlebars templates
 app.set('views', viewPath)
@@ -91,8 +93,8 @@ app.get('*', (req,res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('server up in port on. 3000!')
+app.listen(port, () => {
+    console.log('server up in port on. ' + port)
 })
 
 
