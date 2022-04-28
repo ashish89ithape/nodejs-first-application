@@ -19,7 +19,9 @@ const forecasting = (longitude, latitude, callback) => {
             // callback(msg, undefined)
             callback('Unable to find location', undefined)
         } else {
-           callback(undefined, body.current.weather_descriptions[0] + ' It is currently ' + body.current.temperature + ' degress out. There is a ' + body.current.precip + '% chance of rain.')
+               //icon = <img src={body.current.weather_icons[0]}/>
+               //wind_dir= body.current.wind_dir
+           callback(undefined, 'Today wind direction is ' +body.current.wind_dir  +', and Today\'s weather is  '+ body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. There is a ' + body.current.precip + '% chance of rain.')
        // callback(undefined, chalk.green.inverse(body.current.weather_descriptions[0] +". It is currently "+body.current.temperature+" degree out. It feels like "+body.current.feelslike+" degree out."))
         }
     })
